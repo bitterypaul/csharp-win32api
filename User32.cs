@@ -19,6 +19,21 @@ namespace API.Win32
             );
         #endregion
 
+        #region FindWindowEx
+        [DllImport(
+            "User32.dll",
+            CharSet = CharSet.Auto,
+            CallingConvention = CallingConvention.Winapi
+            )]
+        public static extern
+        IntPtr FindWindowEx(
+            [In, Optional] IntPtr hwndParent,
+            [In, Optional] IntPtr hwndChildAfter,
+            [In, Optional] String lpszClass,
+            [In, Optional] String lpszWindow
+            );
+        #endregion
+
         #region GetWindowText
         [DllImport(
             "User32.dll",
