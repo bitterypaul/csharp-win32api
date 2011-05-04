@@ -27,9 +27,22 @@ namespace API.Win32
             )]
         public static extern
         bool GetWindowText(
-            [In] IntPtr hwnd,
-            [Out] StringBuilder lpString,
-            [In] int nMaxCount
+            [In]    IntPtr hwnd,
+            [Out]   StringBuilder lpString,
+            [In]    int nMaxCount
+            );
+        #endregion
+
+        #region SetParent
+        [DllImport(
+            "User32.dll",
+            CharSet = CharSet.Auto,
+            CallingConvention = CallingConvention.Winapi
+            )]
+        public static extern
+        IntPtr SetParent(
+            [In]            IntPtr hWndChild,
+            [In, Optional]  IntPtr hWndNewParent
             );
         #endregion
     }
